@@ -52,15 +52,6 @@
   become_user: root
   shell: sysctl -p
 
-- name: Set performance governor
-  become: true
-  become_user: root
-  shell: |
-    echo 'GOVERNOR="performance"' | tee /etc/default/cpufrequtils
-    systemctl disable ondemand
-  args:
-    executable: /bin/bash
-
 - name: Reboot host
   become: true
   become_user: root
