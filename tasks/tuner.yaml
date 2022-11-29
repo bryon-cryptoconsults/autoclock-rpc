@@ -51,9 +51,3 @@
   become: true
   become_user: root
   shell: sysctl -p
-
-- name: Reboot host
-  become: true
-  become_user: root
-  reboot:
-    msg: Rebooting host...
